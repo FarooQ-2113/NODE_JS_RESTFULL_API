@@ -8,6 +8,8 @@ var authenticateToken = require('../middleware/authMiddleware.js').authenticateT
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
 router.get('/allUsers', userController.getUsers);
+// router.get('/protected', userController.protectedRoute);
+router.delete('/deleteUserByUsername/:username', userController.deleteUserByUsername);
 
 // Protected route
 router.get('/protected',userController.protectedRoute);

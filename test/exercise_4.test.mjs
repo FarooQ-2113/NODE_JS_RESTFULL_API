@@ -14,9 +14,19 @@ afterEach(function (done) {
   server.close(done);
 });
 
-describe('User API Tests', function () {
+describe('User Signup API Tests', () => {
 
-  // Test for user signup (POST)
+  // Cleanup: Delete the test user before the test
+  before(function (done) {
+    request(server)
+      .delete('/api/users/deleteUserByUsername/testuser')
+      .end(() => {
+        // Ignore errors, proceed with the test
+        done();
+      });
+  });
+
+  // Test for user signup
   it('should create a user and return status 201 on /signup', function (done) {
     request(server)
       .post('/api/users/signup')
@@ -28,6 +38,19 @@ describe('User API Tests', function () {
       })
       .end(done);
   });
+
+  // Cleanup: Delete the test user after the test
+  // after(function (done) {
+  //   request(server)
+  //     .delete('/api/users/deteleUserByUsername/')
+  //     .send({ username: 'testuser' })
+  //     .expect(200)
+  //     .expect('Content-Type', /json/)
+  //     .expect(function (res) {
+  //       if (res.body.message !== 'User deleted successfully') throw new Error('Unexpected response message');
+  //     })
+  //     .end(done);
+  // });
 
   // Test for user login (POST)
   it('should return a token and status 200 on /login with valid credentials', function (done) {

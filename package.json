@@ -10,8 +10,7 @@
     "test2": "mocha -r esm test/exercise_2.test.mjs",
     "test3": "mocha -r esm test/exercise_3.test.mjs",
     "test4": "mocha -r esm test/exercise_4.test.mjs",
-    "testAll": "mocha -r esm test/*.test.mjs",
-    "test": "npm run test0 && npm run test1 && npm run test2 && npm run test3 && npm run test4"
+    "testAll": "mocha -r esm test/*.test.mjs"
   },
   "author": "",
   "license": "ISC",

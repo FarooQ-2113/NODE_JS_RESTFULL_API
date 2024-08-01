@@ -74,3 +74,23 @@ exports.protectedRoute = function (req, res) {
         res.status(200).json({ message: 'Protected content accessed' });
     });
 };
+// Delete route
+exports.deleteUserByUsername = async function (req, res) {
+    try {
+        console.log('deleteUserByUsername called');
+        const { username } = req.params;
+        console.log('Username to delete:', username);
+        
+        const deletedUser = await User.findOneAndDelete({ username: username });
+        if (!deletedUser) {
+            console.log('User not found');
+            return res.status(404).json({ message: 'User not found' });
+        }
+        console.log('User deleted successfully');
+        res.status(200).json({ message: 'User deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        res.status(500).json({ message: 'Error deleting user', error });
+    }
+};
+
