@@ -19,12 +19,10 @@
 1. Clone the repository:
      ```bash
      git clone https://github.com/FarooQ-2113/nodejs_RESTFull_api_practise.git
-     
      cd nodejs_RESTFull_api_practise
-     
      npm install
-
      npm run testAll
+     
      ```
 
 
