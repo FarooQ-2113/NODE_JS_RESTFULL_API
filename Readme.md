@@ -19,28 +19,12 @@
 1. Clone the repository:
      ```bash
      git clone https://github.com/FarooQ-2113/nodejs_RESTFull_api_practise.git
-     ```
-
-2. Install dependencies:
-     ```bash
+     
+     cd nodejs_RESTFull_api_practise
+     
      npm install
-     ```
 
-3. Run tests:
-     ```bash
-     npm test0
-     ```
-     ```bash
-     npm test1
-     ```
-     ```bash
-     npm test2
-     ```
-     ```bash
-     npm test3
-     ```
-     ```bash
-     npm test4
+     npm run testAll
      ```
 
 
